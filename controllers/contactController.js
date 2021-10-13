@@ -1,11 +1,14 @@
 import express from 'express';
 import Contact from "../models/contact.js";
+import errorCheck from '../validation/errorCheck.js';
+import contactRules from '../validation/contactRules.js';
+
 const router = express.Router();
 
 // Besides adding validation and sanitation
 // feel free to improve these in other ways!
 
-router.post("/", async (request, response) => {
+router.post("/",  errorCheck(contactRules), async (request, response) => {
     response.json(await Contact.create(request.body));
 });
 

@@ -1,0 +1,19 @@
+GET http://localhost:3012/contact
+
+####
+
+POST http://localhost:3012/contact
+Content-Type: application/json
+
+{
+    "country": 89,
+    "email": "oh",
+    "message": "A/",
+    "name": 1,
+    "telephone": "2d"
+
+}
+
+
+
+

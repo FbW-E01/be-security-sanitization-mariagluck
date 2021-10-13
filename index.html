@@ -307,6 +307,10 @@
             <option value="australia">Australia</option>
             <option value="canada">Canada</option>
             <option value="usa">USA</option>
+            <option value="Germany">Germany</option>
+            <option value="Antartic">Antartic</option>
+            <option value="Arrakis">Arrakis</option>
+
           </select>
         </div>
         <div class="message">
@@ -344,6 +348,8 @@
             country: document.querySelector("#country").value,
             telephone: document.querySelector("#telephone_input").value,
             name: document.querySelector("#name_input").value,
+            email: document.querySelector("#email_input").value,
+
           };
 
           const headers = { "Content-Type": "application/json" };
@@ -369,7 +375,7 @@
             msgs.forEach((m) =>
             list.insertAdjacentHTML(
                 "afterend",
-                `<p>A friend from ${m.country}: &quot;${m.message}&quot; </p>`
+                `<p>A friend from ${m.country} with Email: ${m.email} says: &quot;${m.message}&quot; </p>`
             )
             );
         } catch (e) {
